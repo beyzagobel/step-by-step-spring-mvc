@@ -149,18 +149,28 @@
       <version>2.4</version>
       <classifier>jdk15</classifier>
     </dependency>
+<<<<<<< HEAD
 
+=======
+>>>>>>> 40c6cd8 (Initial commit)
   </dependencies>
 
   <build>
     <finalName>Step1</finalName>
+<<<<<<< HEAD
     <pluginManagement><!-- lock down plugins versions to avoid using Maven defaults (may be moved to parent pom) -->
+=======
+    <pluginManagement>
+>>>>>>> 40c6cd8 (Initial commit)
       <plugins>
         <plugin>
           <artifactId>maven-clean-plugin</artifactId>
           <version>3.1.0</version>
         </plugin>
+<<<<<<< HEAD
         <!-- see http://maven.apache.org/ref/current/maven-core/default-bindings.html#Plugin_bindings_for_war_packaging -->
+=======
+>>>>>>> 40c6cd8 (Initial commit)
         <plugin>
           <artifactId>maven-resources-plugin</artifactId>
           <version>3.0.2</version>

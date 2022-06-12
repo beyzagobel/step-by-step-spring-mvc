@@ -7,10 +7,14 @@ import org.springframework.web.bind.annotation.GetMapping;
 @Controller
 public class Home  {
 
-    @GetMapping(value = "/*")
+    @GetMapping(value = "/index")
     public String handle(Model model){
 
-        model.addAttribute("mesaj","Hello World!");
+        /*
+         * Model Sınıfı : Controller sınıfında bulunan metoslarda tanımlanarak view katmanına direk veri taşırlar.
+         */
+        model.addAttribute("message","Hello World!");
+
         return "index";
 
     }
