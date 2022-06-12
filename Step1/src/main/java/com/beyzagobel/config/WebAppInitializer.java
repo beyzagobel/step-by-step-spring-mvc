@@ -9,7 +9,7 @@ import javax.servlet.ServletContext;
 import javax.servlet.ServletRegistration;
 
 /*
- * 1- Dispatcher Servlet : Bütün isteklerin karşılandığı ve gelen istekleri uygun controller'a yönlendiriren Front Controller tanımı
+ * Dispatcher Servlet : Bütün isteklerin karşılandığı ve gelen istekleri uygun controller'a yönlendiren Front Controller tanımı
  * WebApplicationInitializer arayüzünün onStartup metodunda Dispatcher Servlet tanımlanır.
 */
 public class WebAppInitializer implements WebApplicationInitializer {
@@ -23,6 +23,10 @@ public class WebAppInitializer implements WebApplicationInitializer {
         dispatcherServlet.setLoadOnStartup(1);
         dispatcherServlet.addMapping("/");
 
+        /*
+         * UTF-8 Karakter Kodlaması için bir Web Filtresi
+         * Dispatcher Servler'den önce işleme alınır.
+         */
         CharacterEncodingFilter characterEncodingFilter = new CharacterEncodingFilter();
         characterEncodingFilter.setEncoding("UTF-8");
         characterEncodingFilter.setForceEncoding(true);
