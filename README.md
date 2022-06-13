@@ -69,42 +69,62 @@ Proje oluşturulduktan sonra ilk proje yapısı Maven tarafından aşağıdaki r
 
 > Java tabanlı web uygulamalar geliştirmek için kallanılan web sunucusudur. Tomcat ayarlarını projemizi oluşturduktan sonra yapacağız.
 
+--------------
 
 # Create A First Spring MVC Project Using IntelliJ Ultimate
 
-- Step 1
+- Step 1 : maven-archetype-webapp şablonu ile web projesi oluşturmaya ilk adım atılır.
 
-![1](https://user-images.githubusercontent.com/78444522/173260749-00cfbdb5-dafe-4505-bc5d-c20513c35d2a.png)
+![image](https://user-images.githubusercontent.com/78444522/173262221-903d9332-d0c6-453d-9a69-ac2d57b0ff6e.png)
 
-- Step 2
 
-![2](https://user-images.githubusercontent.com/78444522/173260815-ff466876-9f13-45d9-9959-fcc6b0455e9b.png)
+- Step 2 : 
+>  Name : Proje dosya adı
+>  
+> Location : Projenizi konumlandıracağınız dizin
+> 
+> GroupId : Projenin organizasyon bilgisi
+> 
+> ArtifactId Projenin Adı
+>
+> version : Projenin version bilgisi
 
-- Step 3
+![image](https://user-images.githubusercontent.com/78444522/173262367-75d306f0-3388-4b9d-97cb-72d3f78d66f1.png)
 
-![3](https://user-images.githubusercontent.com/78444522/173260824-1ebe866e-c05f-44a2-9635-0ddf81ab525d.png)
+
+- Step 3 
+> Local Repository : Maven local reposu
+
+![image](https://user-images.githubusercontent.com/78444522/173262511-46318fa3-56f6-4bc9-8b2d-f9789471ca75.png)
+
 
 - Step 4 : Projemiz oluştu. Şimdi Tomcat ve JDK ayarlarını yapalım.
 
-![4](https://user-images.githubusercontent.com/78444522/173260962-850155b4-27e8-421c-a6a9-dbc257c19fd3.png)
+![image](https://user-images.githubusercontent.com/78444522/173262542-bc303ba6-697f-4b5a-95f6-c9ce6efd3ed4.png)
+
 
 - Step 5
 
-![8](https://user-images.githubusercontent.com/78444522/173261063-22054143-29f9-417f-ac87-bc1976f86c97.png)
+![image](https://user-images.githubusercontent.com/78444522/173262606-fba0af3f-facf-456d-b46e-1c082a723e56.png)
+
 
 - Step 6
+> Application server kısmında Tomcat eklenir.
+> JRE(Java Runtime Environment) kısmına indirilen JDK seçilir.
 
-![9](https://user-images.githubusercontent.com/78444522/173261086-04ca30eb-d031-4ba8-92c5-879e3a2c111d.png)
-
+![image](https://user-images.githubusercontent.com/78444522/173262659-6b50a053-5554-433e-aa48-b6e08a004402.png)
 
 - Step 7
 
-![10](https://user-images.githubusercontent.com/78444522/173261135-e7e2b88f-e8dc-4055-b4f3-21d0687cd4aa.png)
+![image](https://user-images.githubusercontent.com/78444522/173262703-7b96978f-3b96-4f76-97bc-d1059053f90c.png)
 
-![11](https://user-images.githubusercontent.com/78444522/173261141-0da3302e-59df-410b-8d1e-ff3e88e303f5.png)
+![image](https://user-images.githubusercontent.com/78444522/173264035-9f95bd4b-c637-406f-8d6d-ba32ce6e54d7.png)
+
+>Application context : Uygulama bağlamı, 
+![image](https://user-images.githubusercontent.com/78444522/173264079-25181081-c449-4988-8e92-4bfd341319fe.png)
 
 
-![12](https://user-images.githubusercontent.com/78444522/173261150-b3064c2e-70e1-4ddb-8f74-3c9c4ca9ddd6.png)
+
 
 
 
