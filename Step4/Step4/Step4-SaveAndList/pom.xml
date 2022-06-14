@@ -5,12 +5,11 @@
   <modelVersion>4.0.0</modelVersion>
 
   <groupId>com.beyzagobel</groupId>
-  <artifactId>Step4/SaveAndList</artifactId>
+  <artifactId>Step4-SaveAndList</artifactId>
   <version>1.0-SNAPSHOT</version>
   <packaging>war</packaging>
 
-  <name>Step4/SaveAndList Maven Webapp</name>
-  <!-- FIXME change it to the project's website -->
+  <name>Step4-SaveAndList Maven Webapp</name>
   <url>http://www.example.com</url>
 
   <properties>
@@ -150,10 +149,11 @@
       <version>2.4</version>
       <classifier>jdk15</classifier>
     </dependency>
+
   </dependencies>
 
   <build>
-    <finalName>Step4/SaveAndList</finalName>
+    <finalName>Step4-SaveAndList</finalName>
     <pluginManagement><!-- lock down plugins versions to avoid using Maven defaults (may be moved to parent pom) -->
       <plugins>
         <plugin>
