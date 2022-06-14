@@ -120,7 +120,7 @@ Proje oluşturulduktan sonra ilk proje yapısı Maven tarafından aşağıdaki r
 
 ![image](https://user-images.githubusercontent.com/78444522/173264035-9f95bd4b-c637-406f-8d6d-ba32ce6e54d7.png)
 
->Application context : Uygulama bağlamı
+>Application context : Uygulama bağlamıdır.
 
 ![image](https://user-images.githubusercontent.com/78444522/173264079-25181081-c449-4988-8e92-4bfd341319fe.png)
 
