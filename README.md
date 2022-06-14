@@ -126,6 +126,10 @@ Proje oluşturulduktan sonra ilk proje yapısı Maven tarafından aşağıdaki r
 
 
 
+- Tomcat Server ayarlarımız burada bitiyor ve uygulamayı Run ederek projenin ilk oluşturulduğu halinin çalıştığını  görebilirsiniz.
+- Genel proje ayarlarını burada bitiriyoruz. Bu kısımdan sonra ise web projelerimizi nasıl kodluyoruzdan bahsedeceğim.
+
+
 
 
 
