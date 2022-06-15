@@ -18,6 +18,9 @@ public class Home {
         return "kaydet";
     }
 
+    /*
+     * kaydet.jsp formundan gelen verileri parametre olarak controllerda karşıladık ve listele.jsp view'ına gönderdik.
+     */
     @PostMapping(value = "/listele")
     public String listele(@RequestParam String isim,@RequestParam String soyisim,
                           @RequestParam int cinsiyet,@RequestParam int sinif,Model model){
