@@ -1,5 +1,6 @@
 package com.beyzagobel.web;
 
+import net.sf.json.JSONObject;
 import org.springframework.http.HttpMethod;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -21,7 +22,7 @@ public class Home {
      * @PathVariable : İstek yolu parametresidir. İstek adresindeki URI'lar değişkenlerle eşleştirilir.
      * university.com/beyzagobel   ->  beyzagobel bir PathVariable 'dır.
      */
-    @GetMapping(value = "allPersonel/{email}")
+    @GetMapping(value = "personel/{email}")
     public String personel (Model model, @PathVariable("email") String email){
         model.addAttribute("email",email);
         return "index";
@@ -34,8 +35,8 @@ public class Home {
     }
 
     /*
-     * Kaydet formuna yazılan ad ve soyad verileri @requestParam annotation'ı le alınır
-     * ve istenildiği gibi kullanılabilir ben burada verileri kaydedilen.jsp view'ına göndererek ekrana yazdırdım.
+     * Kaydet formuna yazılan ad ve soyad verileri @requestParam annotation'ı ile alınır
+     * ve burada verileri kaydedilen.jsp view'ına göndererek ekrana yazdırdım.
      */
     @PostMapping(value = "/kaydedilen")
     public String kaydedilen(@RequestParam String ad, @RequestParam String soyad,
@@ -47,6 +48,17 @@ public class Home {
         return "kaydedilen";
     }
 
+    /*
+     * @ResponseBody ile ilgili isteğe üretilecek cevabın gövdesine doğrudan veri yerleştirilir.
+     */
+    @GetMapping(value = "/loadOgrenci")
+    public @ResponseBody String loadOgrenci(){
+
+        JSONObject jsonObject = new JSONObject();
+        jsonObject.put("success","success");
+        return jsonObject.toString();
+
+    }
 
 
 
