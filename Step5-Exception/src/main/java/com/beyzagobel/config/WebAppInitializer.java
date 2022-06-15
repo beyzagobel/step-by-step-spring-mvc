@@ -23,7 +23,11 @@ public class WebAppInitializer implements WebApplicationInitializer {
         dispatcherServlet.setLoadOnStartup(1);
         dispatcherServlet.addMapping("/");
 
-        //UTF-8 Karakter Kodlaması için bir Web Filtresi
+        /* Kaynak bulunamaması durumunda(örn: /deneme isteğini karşılayacak method yok ise) Dispatcher Servlet'in NoHandlerFoundException'ı
+         * fırlatması sağlanır
+         */
+        dispatcherServlet.setInitParameter("throwExceptionIfNoHandlerFound", "true");
+
 
         CharacterEncodingFilter characterEncodingFilter = new CharacterEncodingFilter();
         characterEncodingFilter.setEncoding("UTF-8");
