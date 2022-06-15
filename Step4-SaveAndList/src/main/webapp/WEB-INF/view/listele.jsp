@@ -3,6 +3,7 @@
 <html>
 <head>
     <title>Listele</title>
+    <link rel="stylesheet" href="<c:url value="/resources/css/listele.css"/> ">
 
 </head>
 <body>
