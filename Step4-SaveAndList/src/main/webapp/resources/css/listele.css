@@ -1,0 +1,22 @@
+.a:link, a:visited {
+    background-color: #f44336;
+    margin: 20px;
+    padding: 5px 5px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+}
+
+.a:hover, a:active {
+    background-color: red;
+}
+.table, th, td {
+    border: 1px solid black;
+    border-collapse: collapse;
+}
+.th, td {
+    padding-top: 10px;
+    padding-bottom: 20px;
+    padding-left: 30px;
+    padding-right: 40px;
+}
