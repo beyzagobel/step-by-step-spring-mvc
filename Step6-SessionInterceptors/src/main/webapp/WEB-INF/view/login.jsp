@@ -14,7 +14,6 @@
         <label for="password">Last Name</label><br>
         <input type="password" id="password" name="password" placeholder="Password..">
         <br>
-
         <input type="submit" id="loginButton" value="Submit">
     </form>
 </div>

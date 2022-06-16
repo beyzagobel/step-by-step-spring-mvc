@@ -62,6 +62,10 @@ public class WebConfig implements WebMvcConfigurer {
 
     }
 
+    /*
+     * Tanımlanan tüm Interceptor (kesiciler) 'lar buraya eklenmeli, tanımlanmalıdır.
+     * addPathPatterns ile kesilecek istekler, excludePathPatterns ile de hariç tutulacak istekler tanımlanır.
+     */
     @Override
     public void addInterceptors(InterceptorRegistry registry){
         registry.addInterceptor(new SessionInterceptor()).addPathPatterns("/*").excludePathPatterns("/").excludePathPatterns("/loginKontrol");
