@@ -18,15 +18,18 @@ import org.springframework.transaction.annotation.EnableTransactionManagement;
 @ComponentScan(basePackages ={"com.beyzagobel"})
 public class AppConfig {
 
-    @Bean
+   @Bean
     public LocalSessionFactoryBean getSessionFactory(){
         LocalSessionFactoryBean factoryBean = new LocalSessionFactoryBean();
         return factoryBean;
     }
-    @Bean
+   /* @Bean
     public HibernateTransactionManager getTransactionManager(){
         HibernateTransactionManager transactionManager = new HibernateTransactionManager();
         transactionManager.setSessionFactory(getSessionFactory().getObject());  // SessionFactory nesnesi oluşturulur
         return transactionManager;
     }
+
+    */
+
 }
