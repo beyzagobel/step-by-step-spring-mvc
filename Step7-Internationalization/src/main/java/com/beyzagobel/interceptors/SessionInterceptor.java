@@ -9,26 +9,16 @@ import javax.servlet.http.HttpSession;
 
 public class SessionInterceptor extends HandlerInterceptorAdapter {
 
-    /*
-     * HandlerInterceptorAdapter interface'inin preHandle metodu,
-     * WebConfig'de addPathPattern de tanımlanan istekler karşılanmadan ÖNCE istekleri keser.
-     */
-    @Override
+  /*  @Override
     public boolean preHandle(HttpServletRequest request, HttpServletResponse response, Object handler) throws Exception {
         HttpSession session = request.getSession();
         Object email = session.getAttribute("email");
-        /*
-         * /loginKontrol metodu WebConfig'de exclude edilmiş evet ama loginKontrol metodundaki email parametresi null ise yani
-         * URL'den ulaşılmaya çalışılınırsa oda 404 sayfası döndürür,bu sayede SessionInterceptor görevini yapmış olurer,
-         * Sayfaya erişemeyiz.ex
-         */
         if(email == null){
             throw new NoHandlerFoundException(request.getMethod(),request.getRequestURI(),null);
-        }
-        else{
+        }else{
             return true;
         }
     }
 
-
+   */
 }
