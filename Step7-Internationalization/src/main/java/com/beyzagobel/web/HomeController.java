@@ -17,8 +17,7 @@ public class HomeController {
     MessageSource messageSource;
 
     @GetMapping(value = "/")
-    public String home(Locale locale, Model model, HttpServletRequest request,
-                       HttpServletResponse response){
+    public String home(Locale locale, Model model){
 
         model.addAttribute("karsilama",messageSource.getMessage("karsilama",null, locale));
         model.addAttribute("locale",locale);
