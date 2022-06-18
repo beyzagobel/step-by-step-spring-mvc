@@ -3,7 +3,7 @@
 <%@ taglib prefix="spring" uri="http://www.springframework.org/tags" %>
 <html>
 <body>
-<h1><c:out value="${karsilama}"/> </h1>
+<h1><c:out value="${baslik}"/> </h1>
 <h2></h2>
 <a  href="?lang=tr_TR">Turkish</a>
 <a href="?lang=en_US">English</a>
