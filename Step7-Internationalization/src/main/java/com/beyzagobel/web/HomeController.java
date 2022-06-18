@@ -16,11 +16,12 @@ public class HomeController {
     @Autowired
     MessageSource messageSource;
 
-    @GetMapping(value = "/anasayfa")
+    @GetMapping(value = "/")
     public String home(Locale locale, Model model, HttpServletRequest request,
                        HttpServletResponse response){
 
         model.addAttribute("karsilama",messageSource.getMessage("karsilama",null, locale));
+        model.addAttribute("locale",locale);
         return "home";
     }
 

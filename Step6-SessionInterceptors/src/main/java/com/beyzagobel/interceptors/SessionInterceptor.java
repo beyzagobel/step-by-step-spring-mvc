@@ -20,7 +20,7 @@ public class SessionInterceptor extends HandlerInterceptorAdapter {
         /*
          * /loginKontrol metodu WebConfig'de exclude edilmiş evet ama loginKontrol metodundaki email parametresi null ise yani
          * URL'den ulaşılmaya çalışılınırsa oda 404 sayfası döndürür,bu sayede SessionInterceptor görevini yapmış olurer,
-         * Sayfaya erişemeyiz.ex
+         * Sayfaya erişemeyiz.
          */
         if(email == null){
             throw new NoHandlerFoundException(request.getMethod(),request.getRequestURI(),null);
