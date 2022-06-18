@@ -18,8 +18,9 @@ public class SessionInterceptor extends HandlerInterceptorAdapter {
         HttpSession session = request.getSession();
         Object email = session.getAttribute("email");
         /*
-         * /loginKontrol metodu exclude edilmiş evet ama loginKontrol metodundaki email parametresi null ise yani
-         * URL'den ulaşılmaya çalışılınırsa oda 404 sayfası döndürür,erişemeyiz.
+         * /loginKontrol metodu WebConfig'de exclude edilmiş evet ama loginKontrol metodundaki email parametresi null ise yani
+         * URL'den ulaşılmaya çalışılınırsa oda 404 sayfası döndürür,bu sayede SessionInterceptor görevini yapmış olurer,
+         * Sayfaya erişemeyiz.
          */
         if(email == null){
             throw new NoHandlerFoundException(request.getMethod(),request.getRequestURI(),null);
