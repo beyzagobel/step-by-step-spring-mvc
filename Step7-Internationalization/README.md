@@ -31,3 +31,9 @@ Tabili siz hangi dilleri eklemek isterseniz bu şekilde isimlendirerek ekleyebil
    2. SessinLocaleResolver : Session (oturum) locale bilgisinin çözümlenmesi için SessionLocaleResolver bean'i WebConfig'de tanımlanır.
 3. Oturum locale dinleyicisi LocaleChangeInterceptor bean'i eklenir
 4. addInterceptor metoduna diğer tüm eklenen interceptor'lar gibi LocaleChangeInteceptor metodu eklenir.
+
+
+![image](https://user-images.githubusercontent.com/78444522/174457479-43642de3-0d67-4d5f-97cf-2573aee4ce33.png)
+
+![image](https://user-images.githubusercontent.com/78444522/174457482-ed263c80-72d4-49fe-b75b-85c9b4bea8f9.png)
+
