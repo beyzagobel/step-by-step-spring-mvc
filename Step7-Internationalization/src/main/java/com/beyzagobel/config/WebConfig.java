@@ -9,6 +9,7 @@ import org.springframework.http.converter.HttpMessageConverter;
 import org.springframework.http.converter.StringHttpMessageConverter;
 import org.springframework.web.servlet.HandlerInterceptor;
 import org.springframework.web.servlet.config.annotation.*;
+import org.springframework.web.servlet.i18n.CookieLocaleResolver;
 import org.springframework.web.servlet.i18n.LocaleChangeInterceptor;
 import org.springframework.web.servlet.i18n.SessionLocaleResolver;
 import org.springframework.web.servlet.resource.PathResourceResolver;
@@ -71,28 +72,38 @@ public class WebConfig implements WebMvcConfigurer {
         return messageSource;
     }
 
-    @Bean
+    /*
+     * Oturum locale bilgisinin çözümlenmesi için SessionLocaleResolver bean'i WEebConfig'de tanımlanmalıdır.
+     */
+    /*@Bean
     public SessionLocaleResolver localeResolver(){
         SessionLocaleResolver localeResolver = new SessionLocaleResolver();
         localeResolver.setDefaultLocale(Locale.forLanguageTag("tr-TR"));  //varsayılan locale(dil) bilgisi tanımlanır.
         return localeResolver;
     }
 
-    /*@Bean
+     */
+
+    @Bean
+    public CookieLocaleResolver localeResolver() {
+        CookieLocaleResolver localeResolver = new CookieLocaleResolver();
+        localeResolver.setDefaultLocale(Locale.forLanguageTag("tr-TR"));
+        localeResolver.setCookieName("bm470-locale-cookie");
+        localeResolver.setCookieMaxAge(3600); // saniye
+        return localeResolver;
+    }
+
+    @Bean
     public LocaleChangeInterceptor localeInterceptor(){
         LocaleChangeInterceptor interceptor = new LocaleChangeInterceptor();
         interceptor.setParamName("lang");
         return interceptor;
     }
 
-     */
-
     @Override
     public void addInterceptors(InterceptorRegistry registry){
-        // registry.addInterceptor(new SessionInterceptor()).addPathPatterns("/*").excludePathPatterns("/").excludePathPatterns("/loginKontrol");
-        LocaleChangeInterceptor localeChangeInterceptor = new LocaleChangeInterceptor();
-        localeChangeInterceptor.setParamName("lang");
-        registry.addInterceptor(localeChangeInterceptor).addPathPatterns("/*");
+
+        registry.addInterceptor(localeInterceptor()).addPathPatterns("/*");
 
     }
 

@@ -7,12 +7,11 @@ import org.springframework.web.bind.annotation.ResponseStatus;
 import org.springframework.web.servlet.NoHandlerFoundException;
 
 import javax.servlet.http.HttpServletRequest;
-import java.io.IOException;
 
 @ControllerAdvice
 public class AppExceptionHandler {
 
-    /*
+
     @ExceptionHandler(value = NoHandlerFoundException.class)
 
     @ResponseStatus(value = HttpStatus.NOT_FOUND)
@@ -29,7 +28,5 @@ public class AppExceptionHandler {
         return "500";
 
     }
-
-     */
 
 }
