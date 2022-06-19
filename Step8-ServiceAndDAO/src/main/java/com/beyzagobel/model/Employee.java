@@ -4,6 +4,9 @@ import javax.persistence.*;
 import java.io.Serializable;
 import java.util.Date;
 
+
+// Veritabanı Tablosu
+
 @Entity
 @Table(name = "employee")
 public class Employee implements Serializable {

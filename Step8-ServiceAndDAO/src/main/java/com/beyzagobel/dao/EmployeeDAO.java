@@ -10,6 +10,11 @@ import java.io.Serializable;
 @Repository
 public class EmployeeDAO {
 
+    /*
+     * SessionFactory, nesnelerin depolanmasından ve veritabanına yüklenmesinden sorumludur.
+     * Spring ile Hibernate arasında çalışma zamanı arayüzüdür.
+     * Sunduğu metodlar : save(Object),load(Object), get(Object, Id),flush(), getCriteriaBuilder() .
+     */
     @Autowired
     private SessionFactory sessionFactory;
 
@@ -17,10 +22,11 @@ public class EmployeeDAO {
         return  sessionFactory.getCurrentSession();
     }
 
+    // Veritabanına kaydetme işlemini sağlayan dao
     public Boolean saveEmployee(Employee employee){
         boolean success = true;
         try{
-            Serializable s = getCurrentSession().save(employee);
+            Serializable s = getCurrentSession().save(employee);  // SessionFactory'nin save metodu ile nesneler kaydedilir.
         }catch (Exception e){
             e.printStackTrace();
             success = false ;

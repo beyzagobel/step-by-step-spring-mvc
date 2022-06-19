@@ -33,6 +33,7 @@ public class AppConfig {
     public LocalSessionFactoryBean getSessionFactory(){
         LocalSessionFactoryBean factoryBean = new LocalSessionFactoryBean();
 
+        // hibernate.properties dosyasındaki ayarlamalar burada tanımlanır
         Properties props = new Properties();
         props.put(DRIVER,env.getProperty("mysql.driver"));
         props.put(URL,env.getProperty("mysql.url"));

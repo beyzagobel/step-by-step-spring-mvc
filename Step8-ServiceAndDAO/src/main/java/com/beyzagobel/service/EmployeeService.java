@@ -20,7 +20,6 @@ public class EmployeeService {
 
    @Transactional(readOnly = false)  // veri yazılabilir
     public Boolean saveEmployee(Long employeeId,String fname,String lname,int gender,String bdate){
-
        Employee employee = new Employee();
        employee.setFname(fname);
        employee.setLname(lname);
