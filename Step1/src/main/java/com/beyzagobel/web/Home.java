@@ -8,14 +8,13 @@ import org.springframework.web.bind.annotation.GetMapping;
 public class Home  {
 
     @GetMapping(value = "/index")
-    public String handle(Model model){
-
+    public String handle(Model model){ 
+        
+         model.addAttribute("message","Hello World!");
         /*
-         * Model Sınıfı : Controller sınıfında bulunan metoslarda tanımlanarak view katmanına direk veri taşırlar.
+         * Model Sınıfı : Controller sınıfında bulunan metodlarda tanımlanarak view katmanına key-value olarak direk veri taşırlar.
          */
-        model.addAttribute("message","Hello World!");
-
-        return "index";
+        return "index";  // index.jsp view'2 return edilir.
 
     }
 }
