@@ -1,6 +1,5 @@
 package com.beyzagobel.web;
 
-import com.beyzagobel.model.Employee;
 import com.beyzagobel.service.EmployeeService;
 import net.sf.json.JSONObject;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -22,19 +21,16 @@ public class EmployeeController {
     }
 
     @PostMapping(value = "/kaydet")
-    public @ResponseBody String kaydet(@RequestParam String fname, @RequestParam String lname,
+    public @ResponseBody String kaydet(@RequestParam(value = "employeeId",required = false) Long employeeId,@RequestParam String fname, @RequestParam String lname,
                                        @RequestParam int gender,@RequestParam String bdate){
 
-        Employee employee = employeeService.saveEmployee(fname,lname,gender,bdate);
+        Boolean success = employeeService.saveEmployee(employeeId,fname,lname,gender,bdate);
         JSONObject jsonObject = new JSONObject();
         if(fname.equals("") && lname.equals("") && bdate.equals("")){
-            jsonObject.put("fname",employee.getFname());
-            jsonObject.put("success",false);
-        }
-        else {
-            jsonObject.put("success",true);
+            jsonObject.put("success",success);
         }
 
+        jsonObject.put("success",success);
         return jsonObject.toString();
     }
 

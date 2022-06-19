@@ -1,21 +1,26 @@
 package com.beyzagobel.service;
 
 
+import com.beyzagobel.dao.EmployeeDAO;
 import com.beyzagobel.model.Employee;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Propagation;
 import org.springframework.transaction.annotation.Transactional;
-
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 
 @Service
-@Transactional(propagation = Propagation.REQUIRED,readOnly = false)
+@Transactional(propagation = Propagation.REQUIRED,readOnly = true)  // sadece okunabilir
 public class EmployeeService {
 
-   @Transactional(readOnly = true)
-    public Employee saveEmployee(String fname,String lname,int gender,String bdate){
+    @Autowired
+    private EmployeeDAO employeeDAO;
+
+   @Transactional(readOnly = false)  // veri yazılabilir
+    public Boolean saveEmployee(Long employeeId,String fname,String lname,int gender,String bdate){
+
        Employee employee = new Employee();
        employee.setFname(fname);
        employee.setLname(lname);
@@ -29,7 +34,8 @@ public class EmployeeService {
        }
        employee.setBdate(bidate);
 
-       return employee;
+       Boolean success = employeeDAO.saveEmployee(employee);
+       return success;
     }
 
 

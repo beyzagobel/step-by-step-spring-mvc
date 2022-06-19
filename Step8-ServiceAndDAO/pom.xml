@@ -10,15 +10,18 @@
   <packaging>war</packaging>
 
   <name>Step8-ServiceAndDAO Maven Webapp</name>
-  <!-- FIXME change it to the project's website -->
   <url>http://www.example.com</url>
 
   <properties>
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-    <maven.compiler.source>1.7</maven.compiler.source>
-    <maven.compiler.target>1.7</maven.compiler.target>
+    <maven.compiler.source>11</maven.compiler.source>
+    <maven.compiler.target>11</maven.compiler.target>
 
     <spring.framework.version>5.0.3.RELEASE</spring.framework.version>
+
+    <mysql.driver.version>8.0.13</mysql.driver.version>
+    <hibernate.version>5.2.12.Final</hibernate.version>
+    <c3p0.version>0.9.5.2</c3p0.version>
 
   </properties>
 
@@ -141,6 +144,44 @@
       <groupId>javax.xml.bind</groupId>
       <artifactId>jaxb-api</artifactId>
       <version>2.3.0</version>
+    </dependency>
+
+    <!--net.sf.json-lib-->
+    <dependency>
+      <groupId>net.sf.json-lib</groupId>
+      <artifactId>json-lib</artifactId>
+      <version>2.4</version>
+      <classifier>jdk15</classifier>
+    </dependency>
+
+    <!-- **********************************************************************
+** 				HIBERNATE DEPENDENCIES 							 	**
+********************************************************************** -->
+
+    <dependency>
+      <groupId>org.hibernate</groupId>
+      <artifactId>hibernate-core</artifactId>
+      <version>${hibernate.version}</version>
+    </dependency>
+    <!-- Hibernate c3p0 connection pool -->
+    <dependency>
+      <groupId>org.hibernate</groupId>
+      <artifactId>hibernate-c3p0</artifactId>
+      <version>${hibernate.version}</version>
+    </dependency>
+
+    <!-- c3p0 -->
+    <dependency>
+      <groupId>com.mchange</groupId>
+      <artifactId>c3p0</artifactId>
+      <version>${c3p0.version}</version>
+    </dependency>
+
+    <!--  MySQL JDBC Driver -->
+    <dependency>
+      <groupId>mysql</groupId>
+      <artifactId>mysql-connector-java</artifactId>
+      <version>${mysql.driver.version}</version>
     </dependency>
 
     <!--net.sf.json-lib-->
