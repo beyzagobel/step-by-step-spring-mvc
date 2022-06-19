@@ -9,7 +9,7 @@ Proje geliştirirken önemli noktadan birisi, version bilgileridir. Tavsiyem siz
 
 
 
-## Spring MVC Proje Bileşenleri
+##  Technologies Used 
 - JDK 11 - Java Development Kit 
 - IntelliJ Ultimate 
 - Tomcat 9 - Java Uygulama Sunucusu
