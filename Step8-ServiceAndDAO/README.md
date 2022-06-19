@@ -11,14 +11,19 @@
 
 ### What to create ?
 1- config (uygulama konfigürasyon paketi) paketinde AppConfig sınıfı tanımlanır.AppConfig, Spring veritabanı işlemlerinin tanımlanacağı konfigürasyon sınıfıdır.
+
 2- service package - @Service ile tanımlanır.Controller tarafından karşılanan isteklerin iş süreçleriyle ilgilenir ve veritabanı erişimi için dao ile iletişim kurar.
+
 3- dao package - @Repository ile tanımlanır. Veritabanı iletişimi ve işlemlerin yapılmasını sağlar.
+
 4- model package - entity'ler yani veri tabanı  tablalorımız burada tanımlanır. 
+
 5- main -> new -> directory -> resources 
+
 6- resources -> new -> Resouces Bundle -> `hibernate.properties` oluşturulur. hibernate.properties MySql,Hibernate ve c3pO ayarları yer alır.
 
 
-1. pom.xml dosyasını açın ve aşağıdaki bağımlılıklerı(dependencies) projenize ekleyin. 
+* pom.xml dosyasını açın ve aşağıdaki bağımlılıklerı(dependencies) projenize ekleyin. 
 
  <!-- **********************************************************************
 ** 				HIBERNATE DEPENDENCIES 							 	**
@@ -60,5 +65,5 @@
     </dependency>
     
     
-2. hibernate.properties ile veritabanı ayarları yapılır.
+
 
