@@ -25,7 +25,14 @@ public class EmployeeController {
         Boolean success = employeeService.saveOrUpdateEmployee(employeeId,fname,lname,gender,bdate);
         JSONObject jsonObject = new JSONObject();
 
+        if(fname.equals("") || lname.equals("") ){
+            jsonObject.put("exist",false);
+            jsonObject.put("success",success);
+        }
+        else{
+            jsonObject.put("exist",true);
+            jsonObject.put("success",success);
+        }
         return jsonObject.toString();
-
     }
 }

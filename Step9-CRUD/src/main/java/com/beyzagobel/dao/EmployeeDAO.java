@@ -30,4 +30,19 @@ public class EmployeeDAO {
         }
         return success;
     }
+
+    public  Boolean deleteEmployee(Object employeeId){
+        Boolean success = true;
+        try {
+            getCurrentSession().remove(employeeId);
+        }catch (Exception e){
+            e.printStackTrace();
+            success = false;
+        }
+        return success;
+    }
+
+    public Object loadEmployee(Class employee, Serializable id){
+        return getCurrentSession().get(employee,id);
+    }
 }
