@@ -1,6 +1,10 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <html>
+<head>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <link rel="stylesheet" href="<c:url value="/resources/js/employee.js"/>">
+</head>
 <body>
 <h2>All Employess</h2>
 <table style="width:100%" border="1">
@@ -29,34 +33,6 @@
 <br><br>
 
 <button type="button">Add</button>
-
-
-
-<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
-<script>
-    $("#buttonUpdate").click(function () {
-        let url = "";
-        let email = $("#email").val();
-
-        if(email ) {
-            $.ajax({
-                type: "POST",
-                url: url,
-                data: {
-                    email : email,
-
-                },
-                success: function (response) {
-                    alert("Success!")
-                },
-                dataType: "json"
-            });
-        }
-        else {
-            alert("Failed!")
-        }
-    });
-</script>
 
 </body>
 </html>

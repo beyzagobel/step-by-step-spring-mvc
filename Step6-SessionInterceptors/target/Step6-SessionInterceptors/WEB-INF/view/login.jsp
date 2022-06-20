@@ -1,6 +1,9 @@
+<%@ page contentType="text/html;charset=UTF-8" language="java" %>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <html>
 <head>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+
 </head>
 <body>
 <h2>Hello World!</h2>
@@ -18,30 +21,7 @@
     </form>
 </div>
 
+<script src="<c:url value="/resources/js/login.js"/>"></script>
 
-<script>
-    $("#loginButton").click(function () {
-        let url = "loginKontrol";
-        let email = $("#email").val();
-        let password = $("#password").val();
-        if (email && password) {
-            $.ajax({
-                type: "POST",
-                url: url,
-                data: {
-                    email: email,
-                    password: password
-                },
-                success: function (response) {
-                    alert("Login Successful!")
-                    window.location.href = "welcome";
-                },
-                dataType: "json"
-            });
-        } else {
-            alert("Login Failed!")
-        }
-    });
-</script>
 </body>
 </html>
