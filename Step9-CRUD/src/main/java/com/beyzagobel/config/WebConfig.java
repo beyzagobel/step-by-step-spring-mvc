@@ -17,8 +17,6 @@ import java.nio.charset.Charset;
 import java.util.ArrayList;
 import java.util.List;
 
-// Konfigürasyon Sınıfı
-
 @Configuration
 @EnableWebMvc
 @ComponentScan(basePackages = {"com.beyzagobel"})

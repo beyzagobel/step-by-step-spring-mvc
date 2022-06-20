@@ -15,11 +15,6 @@ import java.util.Properties;
 
 import static org.hibernate.cfg.AvailableSettings.*;
 
-/*
- * Transaction Manager ve Session Factory bean'leri tanımlanır.
- * Transaction Manager, veritabanı ile yapılan bütün etkileşimlerin nasıl yapılacağını belirler.
- * SessionFactory, veritabanı ile iletişim için kullanılacak olan session(oturum)'ların tanımı ve yönetimi yapılır.
- */
 @PropertySource(value = "classpath:hibernate.properties",encoding = "UTF-8")
 @EnableTransactionManagement
 @Configuration
@@ -33,12 +28,11 @@ public class AppConfig {
     public LocalSessionFactoryBean getSessionFactory(){
         LocalSessionFactoryBean factoryBean = new LocalSessionFactoryBean();
 
-        // hibernate.properties dosyasındaki ayarlamalar burada tanımlanır
+
         Properties props = new Properties();
         props.put(DRIVER,env.getProperty("mysql.driver"));
         props.put(URL,env.getProperty("mysql.url"));
         props.put(USER, env.getProperty("mysql.user"));
-        //props.put(PASS, env.getProperty("mysql.password"));
 
         props.put(SHOW_SQL, env.getProperty("hibernate.show_sql"));
         props.put(HBM2DDL_AUTO, env.getProperty("hibernate.hbm2ddl.auto"));
