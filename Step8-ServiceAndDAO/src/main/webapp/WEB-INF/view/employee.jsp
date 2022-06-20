@@ -23,7 +23,7 @@
         <option value="1">Male</option>
     </select>
     <br><br>
-    <input type="submit" id="saveButton" value="Kaydet">
+    <input type="submit" id="saveButton" value="Save">
 </form>
 
 <script>

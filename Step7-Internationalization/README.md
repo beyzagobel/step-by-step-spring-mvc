@@ -1,4 +1,11 @@
 ## Spring MVC 5 - Internationalization ( Çoklu Dil Desteği )
+
+![image](https://user-images.githubusercontent.com/78444522/174457479-43642de3-0d67-4d5f-97cf-2573aee4ce33.png)
+
+![image](https://user-images.githubusercontent.com/78444522/174457482-ed263c80-72d4-49fe-b75b-85c9b4bea8f9.png)
+
+
+## Let's Start
 1.
 
  ![](https://user-images.githubusercontent.com/78444522/174455714-f0aceef2-aed7-4604-bcf3-2b0afcda8668.png)
@@ -33,7 +40,5 @@ Tabili siz hangi dilleri eklemek isterseniz bu şekilde isimlendirerek ekleyebil
 4. addInterceptor metoduna diğer tüm eklenen interceptor'lar gibi LocaleChangeInteceptor metodu eklenir.
 
 
-![image](https://user-images.githubusercontent.com/78444522/174457479-43642de3-0d67-4d5f-97cf-2573aee4ce33.png)
 
-![image](https://user-images.githubusercontent.com/78444522/174457482-ed263c80-72d4-49fe-b75b-85c9b4bea8f9.png)
 
