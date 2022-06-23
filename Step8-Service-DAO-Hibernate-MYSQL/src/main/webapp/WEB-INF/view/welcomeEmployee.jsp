@@ -13,7 +13,7 @@ bende burada JSTL kütüphanesinin SQL tag'ı ile veritabanı bağlantısı
 ve sonrasında veritabanında veri çekme işlemi gerçekleştirdim. -->
 
 <sql:setDataSource var="db" driver="com.mysql.cj.jdbc.Driver"
-url="jdbc:mysql://localhost:3306/javad?characterEncoding=utf-8"
+url="jdbc:mysql://localhost:3306/crud?characterEncoding=utf-8"
 user="root"/>
 
 <sql:query var="employee" dataSource="${db}">

@@ -6,10 +6,7 @@ import net.sf.json.JSONObject;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestParam;
-import org.springframework.web.bind.annotation.ResponseBody;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
@@ -48,8 +45,8 @@ public class EmployeeController {
         return jsonObject.toString();
     }
 
-    /*@PostMapping(value = "/deleteEmployee")
-    public String deleteEmployee(@RequestParam Long employeeId){
+    @PostMapping(value = "/deleteEmployee")
+    public @ResponseBody String deleteEmployee(@RequestParam("id") Long employeeId){
 
         Boolean success = employeeService.deleteEmployee(employeeId);
         JSONObject jsonObject = new JSONObject();

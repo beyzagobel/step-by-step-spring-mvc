@@ -14,7 +14,7 @@ import java.util.Date;
 import java.util.List;
 
 @Service
-@Transactional(propagation = Propagation.REQUIRED,readOnly = true)
+@Transactional(propagation = Propagation.REQUIRED,readOnly = true,rollbackFor = Exception.class)
 public class EmployeeService {
 
     @Autowired
@@ -40,22 +40,26 @@ public class EmployeeService {
         try{
             bidate = sdf.parse(bdate);
         } catch (ParseException e){
-            e.getErrorOffset();
+            e.printStackTrace();
         }
         employee.setBdate(bidate);
         Boolean success = employeeDAO.saveOrUpdateEmployee(employee);
         return success;
     }
 
+    @Transactional(readOnly = false)
     public Boolean deleteEmployee(Long employeeId){
-        Boolean success = employeeDAO.deleteEmployee(employeeId);
+        Employee employee = (Employee) employeeDAO.loadEmployee(Employee.class,employeeId);
+        Boolean success = employeeDAO.deleteEmployee(employee);
         return success;
     }
 
-    public Employee loadEmployee(Long employeeId){
+   /* public Employee loadEmployee(Long employeeId){
         Employee employee = (Employee) employeeDAO.loadEmployee(Employee.class,employeeId);
         return  employee;
     }
+
+    */
 
     public List<Employee> loadEmployess(){
         List<Employee> employeeList = employeeDAO.loadEmployees();

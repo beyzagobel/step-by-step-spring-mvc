@@ -12,11 +12,11 @@ $("#saveOrUpdateButton").click(function () {
                 fname: fname,
                 lname: lname,
                 bdate: bdate,
-                gender:gender
+                gender: gender
             },
             success: function (response) {
                 alert("Success!")
-                window.location.href="employees"
+                window.location.href = "employees"
             },
             dataType: "json"
         });
@@ -24,6 +24,28 @@ $("#saveOrUpdateButton").click(function () {
         alert("Failed!")
     }
 });
+
+
+$(".deleteButton").click(function () {
+    let employeeId = $(this).data("employeeId")
+    let url = "deleteEmployee";
+    $.ajax({
+        type: "POST",
+        url: url,
+        data: {
+            employeeId: employeeId
+        },
+        success: function (response) {
+                alert("Success!");
+                location.reload();
+
+        },
+        dataType: "json"
+    });
+});
+
+
+
 
 
 

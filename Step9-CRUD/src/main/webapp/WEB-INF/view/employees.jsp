@@ -3,7 +3,6 @@
 <html>
 <head>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
-
 </head>
 <body>
 <h2>All Employess</h2>
@@ -16,23 +15,23 @@
             <th>Employee Gender</th>
             <th></th>
         </tr>
-        <c:forEach items="${employeeList}" var="employeeList">
+        <c:forEach items="${employeeList}" var="employee">
             <tr>
-                <td><c:out value=" ${employeeList.employeeId}"></c:out></td>
-                <td><c:out value=" ${employeeList.fname}"></c:out></td>
-                <td><c:out value=" ${employeeList.lname}"></c:out></td>
-                <td><c:out value=" ${employeeList.bdate}"></c:out></td>
+                <td><c:out value=" ${employee.employeeId}"></c:out></td>
+                <td><c:out value=" ${employee.fname}"></c:out></td>
+                <td><c:out value=" ${employee.lname}"></c:out></td>
+                <td><c:out value=" ${employee.bdate}"></c:out></td>
                 <c:choose>
-                    <c:when test="${employeeList.gender == 0}">
+                    <c:when test="${employee.gender == 0}">
                         <td>Female</td>
                     </c:when>
-                    <c:when test="${employeeList.gender == 1}">
+                    <c:when test="${employee.gender == 1}">
                         <td>Male</td>
                     </c:when>
                 </c:choose>
                 <td>
                     <button type="button" id="updateButton">Update</button>
-                    <button type="button" id="deleteButton">Delete</button>
+                    <button type="button" class="deleteButton"  data-id="${employee.employeeId}">Delete</button>
                 </td>
             </tr>
         </c:forEach>

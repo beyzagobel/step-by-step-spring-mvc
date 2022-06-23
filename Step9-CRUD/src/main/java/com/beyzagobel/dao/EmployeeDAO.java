@@ -26,7 +26,7 @@ public class EmployeeDAO {
     }
 
     public Boolean saveOrUpdateEmployee(Employee employee){
-        Boolean success = true;
+        boolean success = true;
         try {
             Serializable s = getCurrentSession().save(employee);
         }catch (Exception e){
@@ -36,10 +36,10 @@ public class EmployeeDAO {
         return success;
     }
 
-    public  Boolean deleteEmployee(Object employeeId){
-        Boolean success = true;
+    public  Boolean deleteEmployee(Object employee){
+        boolean success = true;
         try {
-            getCurrentSession().remove(employeeId);
+            getCurrentSession().remove(employee);
         }catch (Exception e){
             e.printStackTrace();
             success = false;
