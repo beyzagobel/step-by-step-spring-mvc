@@ -13,7 +13,7 @@ bende burada JSTL kütüphanesinin SQL tag'ı ile veritabanı bağlantısı
 ve sonrasında veritabanında veri çekme işlemi gerçekleştirdim. -->
 
 <sql:setDataSource var="db" driver="com.mysql.cj.jdbc.Driver"
-url="jdbc:mysql://localhost:3306/java?characterEncoding=utf-8"
+url="jdbc:mysql://localhost:3306/javad?characterEncoding=utf-8"
 user="root"/>
 
 <sql:query var="employee" dataSource="${db}">
@@ -25,16 +25,26 @@ user="root"/>
         <th>Employee ID</th>
         <th>Employee First Name</th>
         <th>Employee Last Name</th>
-        <th>Employee Gender</th>
         <th>Employee BirthDate</th>
+        <th>Employee Gender</th>
     </tr>
     <c:forEach var="table" items="${employee.rows}">
         <tr>
             <td><c:out value="${table.employee_id}"/> </td>
             <td><c:out value="${table.fname}"/></td>
             <td><c:out value="${table.lname}"/></td>
-            <td><c:out value="${table.gender}"/></td>
             <td><c:out value="${table.bdate}"/></td>
+            <!-- Switch ifadesinin karşılığıdır. Gender(cinsiyet) veritabanında int değer olarak tutulut fakat son kullanıcıya int değer yerine
+                 değerin karşıladığı gösterilir.-->
+            <c:choose>
+                <c:when test="${table.gender == 0}">
+                    <td>Female</td>
+                </c:when>
+                <c:when test="${table.gender == 1}">
+                    <td>Male</td>
+                </c:when>
+            </c:choose>
+
         </tr>
     </c:forEach>
 </table>
