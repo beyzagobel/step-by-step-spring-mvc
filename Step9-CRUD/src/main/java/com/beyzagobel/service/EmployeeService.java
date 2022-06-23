@@ -11,6 +11,7 @@ import org.springframework.transaction.annotation.Transactional;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.Date;
+import java.util.List;
 
 @Service
 @Transactional(propagation = Propagation.REQUIRED,readOnly = true)
@@ -35,7 +36,7 @@ public class EmployeeService {
         employee.setGender(gender);
 
         Date bidate = null;
-        SimpleDateFormat sdf = new SimpleDateFormat("gg-aaa-yyyy");
+        SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd");
         try{
             bidate = sdf.parse(bdate);
         } catch (ParseException e){
@@ -45,6 +46,22 @@ public class EmployeeService {
         Boolean success = employeeDAO.saveOrUpdateEmployee(employee);
         return success;
     }
+
+    public Boolean deleteEmployee(Long employeeId){
+        Boolean success = employeeDAO.deleteEmployee(employeeId);
+        return success;
+    }
+
+    public Employee loadEmployee(Long employeeId){
+        Employee employee = (Employee) employeeDAO.loadEmployee(Employee.class,employeeId);
+        return  employee;
+    }
+
+    public List<Employee> loadEmployess(){
+        List<Employee> employeeList = employeeDAO.loadEmployees();
+        return employeeList;
+    }
+
 
 
 }

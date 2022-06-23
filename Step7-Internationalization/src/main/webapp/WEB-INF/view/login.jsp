@@ -9,7 +9,7 @@
 <body>
 <div>
     <form action="">
-        <label for="email"><spring:message code="email"/></label>
+        <label for="email"><spring:message code="email"/></label>   <!-- Spring JSTL'in sağladığı etiketle .proporties dosyasının okunması -->
         <br>
         <input type="email" id="email" name="email" placeholder="<spring:message code="email"/>">
         <br>
