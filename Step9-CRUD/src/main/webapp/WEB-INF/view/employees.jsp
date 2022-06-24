@@ -16,6 +16,8 @@
             <th></th>
         </tr>
         <c:forEach items="${employeeList}" var="employee">
+            <input type="hidden" value="<c:out value="${employee.fname}"/>" id="fname" name="fname">
+            <input type="hidden" value="<c:out value="${employee.lname}"/>" id="lname" name="lname">
             <tr>
                 <td><c:out value=" ${employee.employeeId}"></c:out></td>
                 <td><c:out value=" ${employee.fname}"></c:out></td>
@@ -42,10 +44,7 @@
 <br><br>
 
 
-<button type="button" onclick="window.location.href='saveOrUpdateEmployee'">Add</button>
-
-<input type="reset"  value="Reset">
-
+<button type="button" onclick="window.location.href='saveOrUpdateEmployee'">Add New Employee</button>
 
 <script src="<c:url value="/resources/js/employees.js"/>"></script>
 

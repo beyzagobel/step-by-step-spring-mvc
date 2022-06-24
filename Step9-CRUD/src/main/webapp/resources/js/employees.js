@@ -31,6 +31,8 @@ $("#saveOrUpdateButton").click(function () {
 
 $(".deleteButton").click(function () {
     let employeeId = $(this).data("id")
+    let fname = $("#fname").val();
+    let lname = $("#lname").val();
     let url = "deleteEmployee";
     $.ajax({
         type: "POST",
@@ -39,7 +41,7 @@ $(".deleteButton").click(function () {
             id: employeeId
         },
         success: function (response) {
-                alert("Success!");
+                alert(fname + " " + lname + " Employee Successfully Deleted!")
                 location.reload();
         },
         dataType: "json"

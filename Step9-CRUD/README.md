@@ -1,4 +1,4 @@
-- Save and List
+## Save and List
 
 ![image](https://user-images.githubusercontent.com/78444522/175665826-2a9d40d3-793d-495e-aeb8-4c4d41fbc0ee.png)
 
@@ -7,7 +7,7 @@
 
 ![image](https://user-images.githubusercontent.com/78444522/175665955-92e96962-6a3b-42fe-860d-f6ca10750fc5.png)
 
-- Update
+## Update
 
 ![image](https://user-images.githubusercontent.com/78444522/175666200-ce837d6e-1147-4c5f-a059-4373341d4248.png)
 
@@ -19,7 +19,7 @@
 ![image](https://user-images.githubusercontent.com/78444522/175666362-a80528b3-c4c3-4efc-81bb-2ce373c96592.png)
 
 
-- Delete
+## Delete
 
 ![image](https://user-images.githubusercontent.com/78444522/175668103-cf816387-ce84-4332-ba1a-e137c2b6c94a.png)
 
