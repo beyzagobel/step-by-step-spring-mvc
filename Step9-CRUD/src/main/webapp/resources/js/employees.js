@@ -27,13 +27,13 @@ $("#saveOrUpdateButton").click(function () {
 
 
 $(".deleteButton").click(function () {
-    let employeeId = $(this).data("employeeId")
+    let employeeId = $(this).data("id")
     let url = "deleteEmployee";
     $.ajax({
         type: "POST",
         url: url,
         data: {
-            employeeId: employeeId
+            id: employeeId
         },
         success: function (response) {
                 alert("Success!");
@@ -43,8 +43,6 @@ $(".deleteButton").click(function () {
         dataType: "json"
     });
 });
-
-
 
 
 

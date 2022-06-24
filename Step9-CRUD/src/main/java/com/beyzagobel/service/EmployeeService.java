@@ -49,17 +49,16 @@ public class EmployeeService {
 
     @Transactional(readOnly = false)
     public Boolean deleteEmployee(Long employeeId){
-        Employee employee = (Employee) employeeDAO.loadEmployee(Employee.class,employeeId);
+        Employee employee = loadEmployee(employeeId);
         Boolean success = employeeDAO.deleteEmployee(employee);
         return success;
     }
 
-   /* public Employee loadEmployee(Long employeeId){
+   public Employee loadEmployee(Long employeeId){
         Employee employee = (Employee) employeeDAO.loadEmployee(Employee.class,employeeId);
         return  employee;
     }
 
-    */
 
     public List<Employee> loadEmployess(){
         List<Employee> employeeList = employeeDAO.loadEmployees();

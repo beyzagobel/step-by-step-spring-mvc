@@ -13,18 +13,25 @@
 <div>
     <form action="javascript:void(0)">
         <label for="fname">First name:</label>
-        <input type="text" id="fname" name="fname">
+        <input type="text" id="fname" name="fname" value="<c:out value="${employee.fname}"/>" >
         <br><br>
         <label for="lname">Last name:</label>
-        <input type="text" id="lname" name="lname">
+        <input type="text" id="lname" name="lname" value="<c:out value="${employee.lname}"/>">
         <br><br>
         <label for="bdate">Date:</label>
-        <input type="date" id="bdate" >
+        <input type="date" id="bdate" value="<c:out value="${employee.bdate}"/>" >
         <br><br>
         <label for="gender">Gender</label>
-        <select name="gender" id="gender">
-            <option value="0">Female</option>
-            <option value="1">Male</option>
+        <select name="gender" id="gender" >
+            <c:set var="male" value="1"></c:set>
+            <c:if test="${employee.gender == male}" >
+                <option value="0" >Female</option>
+                <option value="1" selected>Male</option>
+            </c:if>
+            <c:if test="${employee.gender != male}" >
+                <option value="0" selected>Female</option>
+                <option value="1" >Male</option>
+            </c:if>
         </select>
         <br><br>
         <input type="submit" id="saveOrUpdateButton" value="Save Employee">

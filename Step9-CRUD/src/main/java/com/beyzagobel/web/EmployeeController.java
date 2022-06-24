@@ -55,10 +55,14 @@ public class EmployeeController {
 
     }
 
-   /* @PostMapping(value = "/loadEmployee/{employeeId}")
-    public String loadEmployee(){
-        return "add";
+   @GetMapping(value = "/loadEmployee/{employeeId}")
+    public String loadEmployee(@PathVariable("employeeId") Long employeeId,Model model){
+        Employee employee = employeeService.loadEmployee(employeeId);
+        model.addAttribute("employee",employee);
+        return "saveOrUpdateEmployee";
     }
 
-    */
+
+
+
 }

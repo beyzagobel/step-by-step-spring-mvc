@@ -30,7 +30,7 @@
                     </c:when>
                 </c:choose>
                 <td>
-                    <button type="button" id="updateButton">Update</button>
+                    <a href="${pageContext.request.contextPath}/loadEmployee/${employee.employeeId}" class="" data-id="#1">GÜNCELLE</a>
                     <button type="button" class="deleteButton"  data-id="${employee.employeeId}">Delete</button>
                 </td>
             </tr>
@@ -41,7 +41,11 @@
 
 <br><br>
 
+
 <button type="button" onclick="window.location.href='saveOrUpdateEmployee'">Add</button>
+
+<input type="reset"  value="Reset">
+
 
 <script src="<c:url value="/resources/js/employees.js"/>"></script>
 
