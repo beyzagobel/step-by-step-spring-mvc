@@ -12,6 +12,11 @@
 
 <div>
     <form action="javascript:void(0)">
+
+        <input type="hidden" value="<c:out value="${employee.employeeId}"/>" id="employeeId" name="employeeId">
+        <input type="hidden" value="${pageContext.request.contextPath}/saveOrUpdateEmployee" id="saveOrUpdateEmployeeUrl">
+        <input type="hidden" value="${pageContext.request.contextPath}/employees" id="employeesRedirectUrl">
+
         <label for="fname">First name:</label>
         <input type="text" id="fname" name="fname" value="<c:out value="${employee.fname}"/>" >
         <br><br>
@@ -35,6 +40,7 @@
         </select>
         <br><br>
         <input type="submit" id="saveOrUpdateButton" value="Save Employee">
+
     </form>
 </div>
 

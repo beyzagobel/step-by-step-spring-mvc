@@ -30,7 +30,7 @@
                     </c:when>
                 </c:choose>
                 <td>
-                    <a href="${pageContext.request.contextPath}/loadEmployee/${employee.employeeId}" class="" data-id="#1">GÜNCELLE</a>
+                    <a href="${pageContext.request.contextPath}/loadEmployee/${employee.employeeId}">GÜNCELLE</a>
                     <button type="button" class="deleteButton"  data-id="${employee.employeeId}">Delete</button>
                 </td>
             </tr>

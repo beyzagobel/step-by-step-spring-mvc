@@ -8,6 +8,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
 
+import javax.servlet.http.HttpServletRequest;
 import java.util.List;
 
 @Controller
@@ -18,17 +19,22 @@ public class EmployeeController {
 
     @GetMapping(value = "/employees")
     public String employees(Model model){
+
         List<Employee> employeeList = employeeService.loadEmployess();
         model.addAttribute("employeeList",employeeList);
         return "employees";
+
     }
+
     @GetMapping(value = "/saveOrUpdateEmployee")
     public String saveOrUpdateEmployee(){
+
         return "saveOrUpdateEmployee";
+
     }
 
     @PostMapping(value = "/saveOrUpdateEmployee")
-    public @ResponseBody String saveOrUpdateEmployee(@RequestParam(required = false) Long employeeId,@RequestParam String fname,
+    public @ResponseBody String saveOrUpdateEmployee(@RequestParam(required = false,value = "employeeId") Long employeeId,@RequestParam String fname,
                                                      @RequestParam String lname,@RequestParam int gender,@RequestParam String bdate){
 
         Boolean success = employeeService.saveOrUpdateEmployee(employeeId,fname,lname,gender,bdate);
@@ -55,14 +61,14 @@ public class EmployeeController {
 
     }
 
-   @GetMapping(value = "/loadEmployee/{employeeId}")
+    @GetMapping(value = "/loadEmployee/{employeeId}")
     public String loadEmployee(@PathVariable("employeeId") Long employeeId,Model model){
+
         Employee employee = employeeService.loadEmployee(employeeId);
         model.addAttribute("employee",employee);
         return "saveOrUpdateEmployee";
+
     }
-
-
 
 
 }

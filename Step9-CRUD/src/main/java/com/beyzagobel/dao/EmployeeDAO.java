@@ -25,7 +25,7 @@ public class EmployeeDAO {
         return sessionFactory.getCurrentSession();
     }
 
-    public Boolean saveOrUpdateEmployee(Employee employee){
+    public Boolean saveOrUpdateEmployee(Object employee){
         boolean success = true;
         try {
             Serializable s = getCurrentSession().save(employee);

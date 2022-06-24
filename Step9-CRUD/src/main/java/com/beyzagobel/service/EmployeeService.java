@@ -23,10 +23,10 @@ public class EmployeeService {
     @Transactional(readOnly = false)
     public Boolean saveOrUpdateEmployee(Long employeeId,String fname,String lname,int gender,String bdate){
 
-        Employee employee = null;
+        Employee employee ;
 
-        if(employeeId != null ){
-            employee = (Employee) employeeDAO.loadEmployee(Employee.class,employeeId);
+        if(employeeId != null){
+            employee = loadEmployee(employeeId);
         }
         else{
             employee = new Employee();

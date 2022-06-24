@@ -1,5 +1,7 @@
 $("#saveOrUpdateButton").click(function () {
-    let url = "saveOrUpdateEmployee";
+    let url = $("#saveOrUpdateEmployeeUrl").val();
+    let redirectUrl = $("#employeesRedirectUrl").val();
+    let employeeId = $("#employeeId").val();
     let fname = $("#fname").val();
     let lname = $("#lname").val();
     let bdate = $("#bdate").val();
@@ -9,6 +11,7 @@ $("#saveOrUpdateButton").click(function () {
             type: "POST",
             url: url,
             data: {
+                employeeId: employeeId,
                 fname: fname,
                 lname: lname,
                 bdate: bdate,
@@ -16,7 +19,7 @@ $("#saveOrUpdateButton").click(function () {
             },
             success: function (response) {
                 alert("Success!")
-                window.location.href = "employees"
+                window.location.href = redirectUrl ;
             },
             dataType: "json"
         });
@@ -38,11 +41,12 @@ $(".deleteButton").click(function () {
         success: function (response) {
                 alert("Success!");
                 location.reload();
-
         },
         dataType: "json"
     });
 });
+
+
 
 
 
