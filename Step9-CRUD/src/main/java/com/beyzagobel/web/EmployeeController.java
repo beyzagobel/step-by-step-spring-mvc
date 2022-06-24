@@ -20,7 +20,7 @@ public class EmployeeController {
     @GetMapping(value = "/employees")
     public String employees(Model model){
 
-        List<Employee> employeeList = employeeService.loadEmployess();
+        List<Employee> employeeList = employeeService.loadEmployees();
         model.addAttribute("employeeList",employeeList);
         return "employees";
 

@@ -60,7 +60,7 @@ public class EmployeeService {
     }
 
 
-    public List<Employee> loadEmployess(){
+    public List<Employee> loadEmployees(){
         List<Employee> employeeList = employeeDAO.loadEmployees();
         return employeeList;
     }
