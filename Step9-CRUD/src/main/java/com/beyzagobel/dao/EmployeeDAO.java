@@ -51,6 +51,10 @@ public class EmployeeDAO {
         return getCurrentSession().get(employee,id);
     }
 
+    /*
+     * Hibernate Criteria Query Example :
+     * Tüm Employee'lerin nasıl alınacağının gösterimi
+     */
     public List<Employee> loadEmployees(){
         Session currentSession =getCurrentSession();
         CriteriaBuilder builder = currentSession.getCriteriaBuilder();
