@@ -11,31 +11,31 @@ SQL sorguları yamadan sorgular üzerinde nesne yönelimli kontrol sağlamaktad�
 </dependency>
 ```
 
-+ Adım adım sorgu oluşturalım:
-  + SessionFactory nesnesinden bir Session örneği oluşturulur.
++ Adım adım sorgu oluşturalım :
+
+1. SessionFactory nesnesinden bir Session örneği oluşturulur.
            
           Session currentSession = sessionFactory.getCurrentSession();
             
-
-  + getCriteriaBuilder() metodunu çağırarak bir CriteriBuilder örneği oluşturulur.
+2. getCriteriaBuilder() metodunu çağırarak bir CriteriBuilder örneği oluşturulur.
    
           CriteriaBuilder builder = currentSession.getCriteriaBuilder();
           
     
-  + CriteriaBuilder'ın createQuery() metodunu çağırarak CriteriaQuery örneği oluşturulur
+3. CriteriaBuilder'ın createQuery() metodunu çağırarak CriteriaQuery örneği oluşturulur
    
           CriteriaQuery cQuery = builder.createQuery(Item.class);
     
           
-  + Select ile seçeceğimiz Root örneği oluşturulur.
+4. Select ile seçeceğimiz Root örneği oluşturulur.
    
           Root<Item> root = cQuery.from(Item.class);
           
-  + Session'ın createQuery() metodu çağırılarak Query örneği oluşturulur.
+5. Session'ın createQuery() metodu çağırılarak Query örneği oluşturulur.
    
           Query<Item> query = currentSession.createQuery(cQuery);        
           
-   + Bize sonuçları veren Query nesnesinin getResultList() veya getSingleResult() metodu çağrılır.
+6. Bize sonuçları veren Query nesnesinin getResultList() veya getSingleResult() metodu çağrılır.
    
           List<Item> employeeList = query.getResultList();
           Item item = query.getSingleResult();
