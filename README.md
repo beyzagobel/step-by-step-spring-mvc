@@ -14,7 +14,8 @@ Proje geliştirirken önemli noktadan birisi, version bilgileridir. Tavsiyem siz
 - IntelliJ Ultimate 
 - Tomcat 9 - Java Uygulama Sunucusu
 - Apache Maven 3.3+ - Proje Bağımlılık Yöneticisi
-- Hibernate - ORM 
+- Hibernate - ORM Kütüphanesi
+- MySQL - Veritabanı
 
 ## JDK 11 Installing
 [JDK 11 Download](https://www.oracle.com/java/technologies/downloads/#java11)
