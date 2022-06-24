@@ -1,5 +1,8 @@
 ## Hİbernate Criteria Query API 
-SQL sorguları yamadan sorgular üzerinde nesne yönelimli kontrol sağlamaktadır. 
+- SQL sorguları yazmadan nesneye yönelik sorgular yazmamızı sağlar. 
+- Veritabanı bağımsızdır.
+- Sorguları önbellekleme özelliği de vardır.
+
 
 1. Maven Dependencies
 
