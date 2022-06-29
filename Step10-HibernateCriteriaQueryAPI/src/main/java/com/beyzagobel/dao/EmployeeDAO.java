@@ -61,4 +61,14 @@ public class EmployeeDAO {
         return employeeList;
     }
 
+   /* public List<Employee> a(){
+        Session currentSession = getCurrentSession();
+        CriteriaBuilder builder = currentSession.getCriteriaBuilder();
+        CriteriaQuery<Employee> cQuery = builder.createQuery(Employee.class);
+        Root<Employee> root = cQuery.from(Employee.class);
+
+    }
+    
+    */
+
 }
