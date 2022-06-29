@@ -6,7 +6,6 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Propagation;
 import org.springframework.transaction.annotation.Transactional;
-
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.Date;
@@ -43,7 +42,7 @@ public class EmployeeService {
         employee.setPrice(price);
 
         Boolean success = employeeDAO.saveOrUpdateEmployee(employee);
-        return true;
+        return success;
     }
 
     @Transactional(readOnly = false)

@@ -30,6 +30,10 @@ public class Employee {
     @Transient
     private String fnameLname;
 
+    public Long getEmployeeId() {
+        return employeeId;
+    }
+
     public String getFname() {
         return fname;
     }
