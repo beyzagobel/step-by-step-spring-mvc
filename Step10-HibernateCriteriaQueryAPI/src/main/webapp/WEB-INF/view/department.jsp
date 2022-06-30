@@ -14,19 +14,21 @@
     </tr>
     <c:forEach items="${departmentList}" var="department">
 
-        <input type="hidden" value="<c:out value="${department.departmentame}"/>" id="departmentame" name="departmentame">
+        <input type="hidden" value="<c:out value="${department.departmentName}"/>" id="departmentName" name="departmentName">
         <tr>
             <td><c:out value=" ${department.departmentId}"></c:out></td>
             <td><c:out value=" ${department.departmentName}"></c:out></td>
 
             <td>
                 <a href="${pageContext.request.contextPath}/loadDepartment/${department.departmentId}">GÜNCELLE</a>
-                <button type="button" class="deleteDepartmentButton"  data-id="${department.departmentId}">Delete</button>
+                <button type="button" class="deleteDepartmentButton" data-id="${department.departmentId}">Delete</button>
             </td>
         </tr>
     </c:forEach>
 
 </table>
+
+<button type="button" onclick="window.location.href='saveOrUpdateDepartment'">Add New Department</button>
 
 <script src="<c:url value="/resources/js/department.js"/>"></script>
 

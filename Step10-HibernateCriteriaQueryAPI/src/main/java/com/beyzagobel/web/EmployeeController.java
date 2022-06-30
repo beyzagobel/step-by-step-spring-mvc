@@ -38,13 +38,12 @@ public class EmployeeController {
     @PostMapping(value = "/saveOrUpdateEmployee")
     public @ResponseBody String saveOrUpdateEmployee(@RequestParam(required = false,value = "employeeId") Long employeeId,
                                                      @RequestParam String fname, @RequestParam String lname,
-                                                     @RequestParam String bdate, @RequestParam int gender, @RequestParam Double salary){
+                                                     @RequestParam String bdate, @RequestParam int gender, @RequestParam Double salary,
+                                                     @RequestParam Long departmentId){
 
         JSONObject jsonObject = new JSONObject();
-        Boolean success = employeeService.saveOrUpdateEmployee(employeeId,fname,lname,bdate,gender,salary);
+        Boolean success = employeeService.saveOrUpdateEmployee(employeeId,fname,lname,bdate,gender,salary,departmentId);
         jsonObject.put("success",success);
-
-
 
         return jsonObject.toString();
 

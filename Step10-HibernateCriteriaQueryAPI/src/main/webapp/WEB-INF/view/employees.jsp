@@ -24,7 +24,6 @@
             <td><c:out value=" ${employee.employeeId}"></c:out></td>
             <td><c:out value=" ${employee.fname}"></c:out></td>
             <td><c:out value=" ${employee.lname}"></c:out></td>
-            <td><c:out value=" ${employee.lname}"></c:out></td>
             <td><c:out value=" ${employee.bdate}"></c:out></td>
             <c:choose>
                 <c:when test="${employee.gender == 0}">

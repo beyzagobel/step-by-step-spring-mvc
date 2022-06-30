@@ -6,6 +6,7 @@ $("#saveOrUpdateButton").click(function () {
     let bdate = $("#bdate").val();
     let gender = $("#gender").val();
     let salary = $("#salary").val();
+    let departmentId = $("#departmentId").val();
     if (fname && lname) {
         $.ajax({
             type: "POST",
@@ -16,7 +17,8 @@ $("#saveOrUpdateButton").click(function () {
                 lname: lname,
                 bdate: bdate,
                 gender: gender,
-                salary: salary
+                salary: salary,
+                departmentId: departmentId
             },
             success: function (response) {
                 alert("Success!")

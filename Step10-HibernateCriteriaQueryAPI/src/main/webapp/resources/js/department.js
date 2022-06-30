@@ -32,7 +32,7 @@ $(".deleteDepartmentButton").click(function () {
             id: departmentId
         },
         success: function (response) {
-            alert(departmentName + " Employee Successfully Deleted!")
+            alert(departmentName + " Department Successfully Deleted!")
             location.reload();
         },
         dataType: "json"

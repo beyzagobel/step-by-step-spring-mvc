@@ -2,6 +2,7 @@ package com.beyzagobel.service;
 
 import com.beyzagobel.dao.EmployeeDAO;
 import com.beyzagobel.dao.MainDAO;
+import com.beyzagobel.model.Department;
 import com.beyzagobel.model.Employee;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -20,10 +21,13 @@ public class EmployeeService {
     private EmployeeDAO employeeDAO;
 
     @Autowired
+    private DepartmentService departmentService;
+
+    @Autowired
     private MainDAO mainDAO;
 
     @Transactional(readOnly = false)
-    public Boolean saveOrUpdateEmployee(Long employeeId, String fname, String lname, String bdate, int gender, Double salary) {
+    public Boolean saveOrUpdateEmployee(Long employeeId, String fname, String lname, String bdate, int gender, Double salary,Long departmentId) {
 
         Employee employee;
         if(employeeId != null){
@@ -44,6 +48,8 @@ public class EmployeeService {
         employee.setBdate(bidate);
         employee.setGender(gender);
         employee.setSalary(salary);
+        Department department = departmentService.loadDepartment(departmentId);
+        employee.setDepartment(department);
 
         Boolean success = mainDAO.saveOrUpdateObject(employee);
         return success;

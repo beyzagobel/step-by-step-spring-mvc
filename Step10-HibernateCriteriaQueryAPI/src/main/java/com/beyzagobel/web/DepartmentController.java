@@ -18,6 +18,7 @@ public class DepartmentController {
 
     @GetMapping(value = "/department")
     public String department(Model model){
+
         List<Department> departmentList = departmentService.loadAllDepartment();
         model.addAttribute("departmentList",departmentList);
         return "department";
@@ -25,6 +26,7 @@ public class DepartmentController {
 
     @GetMapping(value = "/saveOrUpdateDepartment")
     public String saveOrUpdateDepartment(){
+
         return "saveOrUpdateDepartment";
     }
     @PostMapping("/saveOrUpdateDepartment")
@@ -37,9 +39,11 @@ public class DepartmentController {
     }
 
     @PostMapping(value = "/deleteDepartment")
-    public Boolean deleteDepartment(@RequestParam("id") Long departmentId){
+    public @ResponseBody String deleteDepartment(@RequestParam("id") Long departmentId){
         Boolean success = departmentService.deleteDepartment(departmentId);
-        return success;
+        JSONObject jsonObject = new JSONObject();
+        jsonObject.put("success",success);
+        return  jsonObject.toString();
     }
 
     @GetMapping(value = "/loadDepartment/{departmentId}")
