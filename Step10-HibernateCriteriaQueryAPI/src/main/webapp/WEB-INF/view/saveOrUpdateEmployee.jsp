@@ -36,7 +36,7 @@
         </select>
         <br><br>
         <label for="price">Price:</label>
-        <input type="text" id="price" value="<c:out value="${employee.price}"/>">
+        <input type="text" id="price" value="<c:out value="${employee.salary}"/>">
         <br><br>
         <input type="submit" id="saveOrUpdateButton" value="Save Employee">
 

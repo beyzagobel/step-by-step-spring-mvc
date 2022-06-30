@@ -29,10 +29,10 @@ public class EmployeeController {
     @PostMapping(value = "/saveOrUpdateEmployee")
     public @ResponseBody String saveOrUpdateEmployee(@RequestParam(required = false,value = "employeeId") Long employeeId,
                                                      @RequestParam String fname, @RequestParam String lname,
-                                                     @RequestParam String bdate, @RequestParam int gender, @RequestParam Double price){
+                                                     @RequestParam String bdate, @RequestParam int gender, @RequestParam Double salary){
 
         JSONObject jsonObject = new JSONObject();
-        Boolean success = employeeService.saveOrUpdateEmployee(employeeId,fname,lname,bdate,gender,price);
+        Boolean success = employeeService.saveOrUpdateEmployee(employeeId,fname,lname,bdate,gender,salary);
         jsonObject.put("success",success);
         return jsonObject.toString();
 

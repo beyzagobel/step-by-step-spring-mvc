@@ -23,8 +23,8 @@ public class Employee {
     @Column(name = "gender")
     private int gender;
 
-    @Column(name = "price")
-    private Double price;
+    @Column(name = "salary")
+    private Double salary;
 
     // @Transient : Sadece Java sınıfı tarafından kullanılır, veritabanında bir karşılığı yoktur
     @Transient
@@ -58,12 +58,12 @@ public class Employee {
         this.gender = gender;
     }
 
-    public Double getPrice() {
-        return price;
+    public Double getSalary() {
+        return salary;
     }
 
-    public void setPrice(Double price) {
-        this.price = price;
+    public void setSalary(Double price) {
+        this.salary = price;
     }
 
     public Date getBdate() {

@@ -19,7 +19,7 @@ public class EmployeeService {
     private EmployeeDAO employeeDAO;
 
     @Transactional(readOnly = false)
-    public Boolean saveOrUpdateEmployee(Long employeeId, String fname, String lname, String bdate, int gender, Double price) {
+    public Boolean saveOrUpdateEmployee(Long employeeId, String fname, String lname, String bdate, int gender, Double salary) {
 
         Employee employee;
         if(employeeId != null){
@@ -39,7 +39,7 @@ public class EmployeeService {
         }
         employee.setBdate(bidate);
         employee.setGender(gender);
-        employee.setPrice(price);
+        employee.setSalary(salary);
 
         Boolean success = employeeDAO.saveOrUpdateEmployee(employee);
         return success;
