@@ -38,6 +38,14 @@
         <label for="price">Price:</label>
         <input type="text" id="price" value="<c:out value="${employee.salary}"/>">
         <br><br>
+
+        <label for="department">Department</label>
+        <select name="department" id="department">
+            <c:forEach items="${departmentList}" var="department">
+                <option value="${department.departmentId}" selected>${department.departmentName}</option>
+            </c:forEach>
+        </select>
+        <br><br>
         <input type="submit" id="saveOrUpdateButton" value="Save Employee">
 
     </form>

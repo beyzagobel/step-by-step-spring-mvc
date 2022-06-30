@@ -1,6 +1,8 @@
 package com.beyzagobel.web;
 
+import com.beyzagobel.model.Department;
 import com.beyzagobel.model.Employee;
+import com.beyzagobel.service.DepartmentService;
 import com.beyzagobel.service.EmployeeService;
 import net.sf.json.JSONObject;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -15,14 +17,21 @@ public class EmployeeController {
     @Autowired
     private EmployeeService employeeService;
 
+    @Autowired
+    private DepartmentService departmentService;
+
     @GetMapping(value = "/employees")
     public String employees(Model model){
         List<Employee> employeeList = employeeService.loadAllEmployee();
+
         model.addAttribute("employeeList",employeeList);
         return "employees";
     }
     @GetMapping(value = "/saveOrUpdateEmployee")
-    public String saveOrUpdateEmployee(){
+    public String saveOrUpdateEmployee(Model model){
+
+        List<Department> departmentList = departmentService.loadAllDepartment();
+        model.addAttribute("departmentList",departmentList);
         return "saveOrUpdateEmployee";
     }
 
@@ -34,6 +43,9 @@ public class EmployeeController {
         JSONObject jsonObject = new JSONObject();
         Boolean success = employeeService.saveOrUpdateEmployee(employeeId,fname,lname,bdate,gender,salary);
         jsonObject.put("success",success);
+
+
+
         return jsonObject.toString();
 
     }
@@ -51,6 +63,5 @@ public class EmployeeController {
         Employee employee = employeeService.loadEmployee(employeeId);
         model.addAttribute("employee",employee);
         return "saveOrUpdateEmployee";
-
     }
 }

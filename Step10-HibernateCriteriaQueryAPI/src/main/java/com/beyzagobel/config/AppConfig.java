@@ -1,5 +1,6 @@
 package com.beyzagobel.config;
 
+import com.beyzagobel.model.Department;
 import com.beyzagobel.model.Employee;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;
@@ -28,7 +29,6 @@ public class AppConfig {
     public LocalSessionFactoryBean getSessionFactory(){
         LocalSessionFactoryBean factoryBean = new LocalSessionFactoryBean();
 
-
         Properties props = new Properties();
         props.put(DRIVER,env.getProperty("mysql.driver"));
         props.put(URL,env.getProperty("mysql.url"));
@@ -45,7 +45,7 @@ public class AppConfig {
         props.put(C3P0_CONFIG_PREFIX + ".initialPoolSize", env.getProperty("hibernate.c3p0.initialPoolSize"));
 
         factoryBean.setHibernateProperties(props);
-        factoryBean.setAnnotatedClasses(Employee.class);
+        factoryBean.setAnnotatedClasses(Employee.class, Department.class);
         return factoryBean;
     }
 

@@ -1,6 +1,6 @@
 package com.beyzagobel.dao;
 
-import com.beyzagobel.model.Employee;
+import com.beyzagobel.model.Department;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 import org.hibernate.query.Query;
@@ -12,7 +12,7 @@ import javax.persistence.criteria.Root;
 import java.util.List;
 
 @Repository
-public class EmployeeDAO {
+public class DepartmentDAO {
 
     @Autowired
     private SessionFactory sessionFactory;
@@ -21,18 +21,16 @@ public class EmployeeDAO {
         return sessionFactory.getCurrentSession();
     }
 
-    public List<Employee> loadAllEmployee(){
+    public List<Department> loadAllDepartment() {
         Session currentSession = getCurrentSession();
-        CriteriaBuilder builder = currentSession.getCriteriaBuilder();
-        CriteriaQuery<Employee> cQuery = builder.createQuery(Employee.class);
-        Root<Employee> root = cQuery.from(Employee.class);
-        cQuery.select(root);
+        CriteriaBuilder builder =  currentSession.getCriteriaBuilder();
+        CriteriaQuery<Department> criteriaQuery = builder.createQuery(Department.class);
+        Root<Department> root = criteriaQuery.from(Department.class);
+        criteriaQuery.select(root);
 
-        Query<Employee> query = currentSession.createQuery(cQuery);
-        List<Employee> employeeList = query.getResultList();
-        return employeeList;
+        Query<Department> query = currentSession.createQuery(criteriaQuery);
+        List<Department> departmentList = query.getResultList();
+        return departmentList;
     }
-
-
 
 }

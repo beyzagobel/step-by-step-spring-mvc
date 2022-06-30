@@ -15,6 +15,7 @@
         <th>Employee Birthdate</th>
         <th>Employee Gender</th>
         <th>Employee Salary</th>
+        <th>Department</th>
     </tr>
     <c:forEach items="${employeeList}" var="employee">
         <input type="hidden" value="<c:out value="${employee.fname}"/>" id="fname" name="fname">
@@ -34,6 +35,7 @@
                 </c:when>
             </c:choose>
             <td><c:out value=" ${employee.salary} $"></c:out></td>
+            <td><c:out value=" ${employee.department.departmentName}"></c:out></td>
             <td>
                 <a href="${pageContext.request.contextPath}/loadEmployee/${employee.employeeId}">GÜNCELLE</a>
                 <button type="button" class="deleteButton"  data-id="${employee.employeeId}">Delete</button>

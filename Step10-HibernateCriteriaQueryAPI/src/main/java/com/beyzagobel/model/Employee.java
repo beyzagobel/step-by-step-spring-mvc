@@ -1,10 +1,12 @@
 package com.beyzagobel.model;
 
 import javax.persistence.*;
+import java.io.Serializable;
 import java.util.Date;
 
-@Entity(name = "employee")
-public class Employee {
+@Entity
+@Table(name = "employee")
+public class Employee implements Serializable {
 
     @Id
     @Column(name = "employee_id")
@@ -29,6 +31,10 @@ public class Employee {
     // @Transient : Sadece Java sınıfı tarafından kullanılır, veritabanında bir karşılığı yoktur
     @Transient
     private String fnameLname;
+
+    @ManyToOne
+    @JoinColumn(name = "department_id", referencedColumnName = "department_id")
+    private Department department;
 
     public Long getEmployeeId() {
         return employeeId;
@@ -76,5 +82,13 @@ public class Employee {
 
     public String getFnameLname() {
         return fnameLname;
+    }
+
+    public Department getDepartment() {
+        return department;
+    }
+
+    public void setDepartment(Department department) {
+        this.department = department;
     }
 }
