@@ -9,7 +9,7 @@
 <div>
     <form action="javascript:void(0)">
 
-        <input type="hidden" value="<c:out value="${department.departmentId}"/>" id="departmentId" name="employeeId">
+        <input type="hidden" value="<c:out value="${department.departmentId}"/>" id="departmentId">
         <input type="hidden" value="${pageContext.request.contextPath}/saveOrUpdateDepartment" id="saveOrUpdateDepartmentUrl">
         <input type="hidden" value="${pageContext.request.contextPath}/department" id="departmentRedirectUrl">
 

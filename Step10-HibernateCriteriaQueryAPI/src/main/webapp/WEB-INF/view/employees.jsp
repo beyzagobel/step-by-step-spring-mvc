@@ -36,7 +36,7 @@
             <td><c:out value=" ${employee.salary} $"></c:out></td>
             <td><c:out value=" ${employee.department.departmentName}"></c:out></td>
             <td>
-                <a href="${pageContext.request.contextPath}/loadEmployee/${employee.employeeId}">GÜNCELLE</a>
+                <a href="${pageContext.request.contextPath}/loadEmployee/${employee.employeeId}">Update</a>
                 <button type="button" class="deleteButton"  data-id="${employee.employeeId}">Delete</button>
             </td>
         </tr>

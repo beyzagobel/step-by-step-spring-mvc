@@ -42,3 +42,43 @@
    
           List<Item> employeeList = query.getResultList();
           Item item = query.getSingleResult();
+          
+          
+ 
+ ## Step 10 Project
+
+          
+          
+![image](https://user-images.githubusercontent.com/78444522/177060290-4b301678-329a-48d3-ab65-d42d969e2827.png)
+
+![image](https://user-images.githubusercontent.com/78444522/177060455-415a500c-33c3-439b-9c5c-00f62bd95045.png)
+
+![image](https://user-images.githubusercontent.com/78444522/177060502-a3c8c393-1733-4028-b923-e7afb64d0e1d.png)
+
+![image](https://user-images.githubusercontent.com/78444522/177060524-3eadeff5-da99-4c0c-93f3-6be779031e20.png)
+
+![image](https://user-images.githubusercontent.com/78444522/177060573-894af5ae-11ba-41ef-a850-0338d8b6765b.png)
+
+![image](https://user-images.githubusercontent.com/78444522/177060593-a856de25-d2d2-4afe-b81f-8e4cb03fbc30.png)
+
+
+
+
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 

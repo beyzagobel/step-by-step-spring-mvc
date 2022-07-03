@@ -63,4 +63,26 @@ public class EmployeeController {
         model.addAttribute("employee",employee);
         return "saveOrUpdateEmployee";
     }
+
+    @GetMapping(value = "/employeesOfDepartments")
+    public String employeesOfDepartment(Model model){
+        List<Department> departmentList = departmentService.loadAllDepartment();
+        model.addAttribute("departmentList",departmentList);
+        return "employeesOfDepartments";
+
+    }
+
+    @PostMapping(value = "/employeesOfDepartments")
+    public @ResponseBody String employeesOfDepartments(@RequestParam("departmentId") Long departmentId){
+        List<Employee> employeeList = employeeService.employeesOfDepartments(departmentId);
+        JSONObject jsonObject = new JSONObject();
+        jsonObject.put("employeeList",employeeList);
+
+        return "employeesOfDepartments";
+
+    }
+
+
+
+
 }

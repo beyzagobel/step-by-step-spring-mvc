@@ -71,4 +71,9 @@ public class EmployeeService {
         List<Employee> employeeList = employeeDAO.loadAllEmployee();
         return employeeList;
     }
+
+    public List<Employee> employeesOfDepartments(Long departmentId) {
+        List<Employee> employeeList = employeeDAO.employeesOfDepartments(departmentId);
+        return employeeList;
+    }
 }

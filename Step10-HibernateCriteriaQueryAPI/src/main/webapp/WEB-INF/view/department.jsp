@@ -20,7 +20,7 @@
             <td><c:out value=" ${department.departmentName}"></c:out></td>
 
             <td>
-                <a href="${pageContext.request.contextPath}/loadDepartment/${department.departmentId}">GÜNCELLE</a>
+                <a href="${pageContext.request.contextPath}/loadDepartment/${department.departmentId}">Update</a>
                 <button type="button" class="deleteDepartmentButton" data-id="${department.departmentId}">Delete</button>
             </td>
         </tr>
